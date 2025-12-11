@@ -1,24 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Durgay Publicity - Print on Demand</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Durgay Publicity - Print & Design</title>
 
-  <!-- Use external css (so you can edit style.css anytime) -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Inline CSS (keeps things simple and avoids missing stylesheet) -->
+  <style>
+  :root{--accent:#d61c2a;--bg:#f7f7f7;--card-shadow:0 2px 10px rgba(0,0,0,0.1)}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#222}
+  header{width:100%;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;background:#163f86;color:#fff;position:sticky;top:0;z-index:1000}
+  .header-left{display:flex;align-items:center}
+  .logo{height:56px;margin-right:12px}
+  .company-name{font-size:22px;font-weight:700;color:#fff;margin:0}
+  nav a{margin-left:16px;color:#fff;text-decoration:none;font-weight:600}
+  .banner{padding:22px;text-align:left;background:#fff;border-bottom:1px solid #eee}
+  .banner h2{font-size:26px;color:var(--accent);margin:6px 0}
+  .products-section h2,.printing-section h2{font-size:22px;margin:20px 18px;color:#111}
+  .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;padding:10px 18px}
+  .product-card{background:#fff;padding:10px;border-radius:8px;box-shadow:var(--card-shadow);text-align:center}
+  .product-card img{width:100%;height:140px;object-fit:contain;border-radius:6px}
+  .product-name{margin-top:8px;font-weight:600}
+  .printing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;padding:12px 18px}
+  .service-card{background:#fff;padding:12px;border-radius:8px;box-shadow:var(--card-shadow);text-align:center}
+  .service-card img{width:100%;height:140px;object-fit:contain;border-radius:6px}
+  .contact-box{background:#fff;margin:18px;border-radius:8px;padding:14px;box-shadow:var(--card-shadow);text-align:center}
+  footer{background:#222;color:#fff;padding:12px;text-align:center;margin-top:18px}
+  .whatsapp-button{position:fixed;right:16px;bottom:16px;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;z-index:9999}
+  .whatsapp-button img{width:30px;height:30px}
+  @media (max-width:640px){header{padding:8px}.company-name{font-size:18px}nav{display:none}}
+  </style>
 
-  <!-- favicon (optional) -->
-  <link rel="icon" href="images/favicon.ico">
+  <!-- favicon (if present at repo root as favicon.ico) -->
+  <link rel="icon" href="favicon.ico">
 </head>
 <body>
-
-  <!-- HEADER -->
   <header>
     <div class="header-left">
-      <!-- NOTICE: logo now points to images/logo.png -->
-      <img src="images/logo.png" alt="Durgay Publicity Logo" class="logo">
-      <h1 class="company-name">DURGAY PUBLICITY</h1>
+      <!-- NOTE: uses logo.png from repo root -->
+      <img src="logo.png" alt="Durgay Publicity Logo" class="logo">
+      <div class="company-name">DURGAY PUBLICITY</div>
     </div>
 
     <nav>
@@ -29,83 +51,61 @@
     </nav>
   </header>
 
-  <!-- BANNER -->
   <section class="banner" id="home">
     <h2>Welcome to Durgay Publicity</h2>
     <p>Print on Demand • Branding • Custom Designs</p>
   </section>
 
-  <!-- PRODUCTS -->
   <section class="products-section" id="products">
     <h2>Our Products</h2>
-
     <div class="products">
-      <!-- NOTE: all product images should be in images/ folder -->
-      <div class="product-card"><img src="images/product1.jpg" alt=""><div class="product-name">Product 1</div></div>
-      <div class="product-card"><img src="images/product2.jpg" alt=""><div class="product-name">Product 2</div></div>
-      <div class="product-card"><img src="images/product3.jpg" alt=""><div class="product-name">Product 3</div></div>
-      <div class="product-card"><img src="images/product4.jpg" alt=""><div class="product-name">Product 4</div></div>
-      <div class="product-card"><img src="images/product5.jpg" alt=""><div class="product-name">Product 5</div></div>
-      <div class="product-card"><img src="images/product6.jpg" alt=""><div class="product-name">Product 6</div></div>
-      <div class="product-card"><img src="images/product7.jpg" alt=""><div class="product-name">Product 7</div></div>
-      <div class="product-card"><img src="images/product8.jpg" alt=""><div class="product-name">Product 8</div></div>
-      <div class="product-card"><img src="images/product9.jpg" alt=""><div class="product-name">Product 9</div></div>
-      <div class="product-card"><img src="images/product10.jpg" alt=""><div class="product-name">Product 10</div></div>
-      <div class="product-card"><img src="images/product11.jpg" alt=""><div class="product-name">Product 11</div></div>
-      <div class="product-card"><img src="images/product12.jpg" alt=""><div class="product-name">Product 12</div></div>
+      <!-- Using product1.jpg ... product12.jpg from repo root -->
+      <div class="product-card"><img src="product1.jpg" alt="Product 1"><div class="product-name">Product 1</div></div>
+      <div class="product-card"><img src="product2.jpg" alt="Product 2"><div class="product-name">Product 2</div></div>
+      <div class="product-card"><img src="product3.jpg" alt="Product 3"><div class="product-name">Product 3</div></div>
+      <div class="product-card"><img src="product4.jpg" alt="Product 4"><div class="product-name">Product 4</div></div>
+      <div class="product-card"><img src="product5.jpg" alt="Product 5"><div class="product-name">Product 5</div></div>
+      <div class="product-card"><img src="product6.jpg" alt="Product 6"><div class="product-name">Product 6</div></div>
+      <div class="product-card"><img src="product7.jpg" alt="Product 7"><div class="product-name">Product 7</div></div>
+      <div class="product-card"><img src="product8.jpg" alt="Product 8"><div class="product-name">Product 8</div></div>
+      <div class="product-card"><img src="product9.jpg" alt="Product 9"><div class="product-name">Product 9</div></div>
+      <div class="product-card"><img src="product10.jpg" alt="Product 10"><div class="product-name">Product 10</div></div>
+      <div class="product-card"><img src="product11.jpg" alt="Product 11"><div class="product-name">Product 11</div></div>
+      <div class="product-card"><img src="product12.jpg" alt="Product 12"><div class="product-name">Product 12</div></div>
     </div>
   </section>
 
-  <!-- PRINTING (uses images/banner.jpg etc) -->
   <section class="printing-section" id="printing">
     <h2>Printing Services</h2>
-
     <div class="printing-grid">
-      <div class="service-card">
-        <img src="images/banner.jpg" alt="Banner Printing">
-        <div><b>Banner Printing</b></div>
-        <div style="font-size:13px;color:#666">Large, durable vinyl banners</div>
-      </div>
-
-      <div class="service-card">
-        <img src="images/flex.jpg" alt="Flex Printing">
-        <div><b>Flex Printing</b></div>
-        <div style="font-size:13px;color:#666">Outdoor flex printing</div>
-      </div>
-
-      <div class="service-card">
-        <img src="images/mug.jpg" alt="Mug Printing">
-        <div><b>Mug Printing</b></div>
-        <div style="font-size:13px;color:#666">Custom sublimation mugs</div>
-      </div>
-
-      <div class="service-card">
-        <img src="images/standee.jpg" alt="Standee Printing">
-        <div><b>Standee Printing</b></div>
-        <div style="font-size:13px;color:#666">Premium event standees</div>
-      </div>
-
-      <div class="service-card">
-        <img src="images/tshirt.jpg" alt="T-shirt Printing">
-        <div><b>T-Shirt Printing</b></div>
-        <div style="font-size:13px;color:#666">High-quality custom tees</div>
-      </div>
+      <div class="service-card"><img src="banner.jpg" alt="Banner Printing"><div style="margin-top:8px"><b>Banner Printing</b></div><div style="color:#666">Large, durable vinyl banners</div></div>
+      <div class="service-card"><img src="flex.jpg" alt="Flex Printing"><div style="margin-top:8px"><b>Flex Printing</b></div><div style="color:#666">Outdoor flex printing</div></div>
+      <div class="service-card"><img src="mug.jpg" alt="Mug Printing"><div style="margin-top:8px"><b>Mug Printing</b></div><div style="color:#666">Custom sublimation mugs</div></div>
+      <div class="service-card"><img src="standee.jpg" alt="Standee Printing"><div style="margin-top:8px"><b>Standee Printing</b></div><div style="color:#666">Premium event standees</div></div>
+      <div class="service-card"><img src="tshirt.jpg" alt="T-Shirt Printing"><div style="margin-top:8px"><b>T-Shirt Printing</b></div><div style="color:#666">High-quality custom tees</div></div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section class="contact-box" id="contact">
     <h3>Contact Us</h3>
-    <p><b>Mobile:</b> 7309512783</p>
-    <p><b>Location:</b> Zero Road, Prayagraj</p>
+    <p><strong>Mobile:</strong> 7309512783</p>
+    <p><strong>Location:</strong> Zero Road, Prayagraj</p>
   </section>
 
   <footer>© 2025 Durgay Publicity — All Rights Reserved</footer>
 
-  <!-- WHATSAPP BUTTON -->
+  <!-- WhatsApp quick button -->
   <a href="https://wa.me/917309512783" target="_blank" class="whatsapp-button">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
 
+  <!-- small fallback for broken images -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('img').forEach(function(img){
+        img.onerror = function(){ this.src = 'placeholder.png'; };
+      });
+    });
+  </script>
 </body>
 </html>
