@@ -5,20 +5,122 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Durgay Publicity - Print & Design</title>
 
-  <link rel="stylesheet" href="style.css">
+  <!-- Inline CSS (no external stylesheet needed) -->
+  <style>
+  :root {
+    --accent: #d8383b;
+    --muted: #6b6b6b;
+    --card-bg: #fff;
+    --page-bg: #f5f5f5;
+    --container-width: 1100px;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    background:var(--page-bg);
+    color:#222;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  .container{
+    max-width:var(--container-width);
+    margin:0 auto;
+    padding:20px;
+  }
+
+  /* HEADER */
+  .site-header{
+    background:#fff;
+    border-bottom:1px solid #eee;
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:12px 20px;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .logo img{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    object-fit:cover;
+  }
+  .brand{font-size:20px;color:var(--accent);line-height:1}
+  .brand span{display:block;font-size:12px;color:#111;margin-top:-2px;font-weight:700}
+  .main-nav a{margin-left:18px;color:#333;text-decoration:none;font-weight:600}
+
+  /* HERO */
+  .hero{
+    padding:36px 0;
+    text-align:center;
+  }
+  .hero h1{margin:6px 0;font-size:28px}
+  .hero p{color:var(--muted);margin:0}
+
+  /* SERVICES */
+  .services-section{ text-align:center; padding:30px 0; }
+  .services-section h2{ font-size:28px; margin:6px 0 18px; color:#222 }
+  .services-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+    margin-top:8px;
+    padding:0 10px;
+  }
+  .service-card{
+    background:var(--card-bg);
+    width:240px;
+    padding:18px;
+    border-radius:12px;
+    box-shadow:0 6px 14px rgba(0,0,0,0.06);
+    transition:transform .18s ease, box-shadow .18s ease;
+    text-align:center;
+  }
+  .service-card:hover{ transform:translateY(-6px); box-shadow:0 12px 28px rgba(0,0,0,0.12); }
+  .service-icon{ width:64px; height:64px; object-fit:contain; display:block; margin:0 auto 12px; }
+  .service-card h3{ margin:6px 0; font-size:18px; color:#111 }
+  .service-card p{ color:var(--muted); margin:0; font-size:14px }
+
+  /* CONTACT */
+  .contact{ background:#fff; padding:28px; border-radius:10px; margin:30px 0; box-shadow:0 6px 14px rgba(0,0,0,0.04); text-align:center }
+
+  /* FOOTER */
+  .site-footer{ background:#222; color:#fff; padding:18px; text-align:center; margin-top:30px }
+
+  /* Responsive */
+  @media (max-width:880px){
+    .service-card{ width:46%; }
+  }
+  @media (max-width:640px){
+    .service-card{ width:100%; }
+    .main-nav{ display:none; }
+    .header-inner{ padding:10px; }
+  }
+  </style>
+
+  <!-- Favicon (optional) -->
   <link rel="icon" href="images/favicon.ico">
 </head>
 
 <body>
-
-  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">
         <img src="images/logo.png" alt="Durgay Publicity Logo">
         <div class="brand"><strong>DURGAY</strong><span>PUBLICITY</span></div>
       </div>
-
       <nav class="main-nav">
         <a href="#home">Home</a>
         <a href="#products">Products</a>
@@ -28,58 +130,48 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <main>
     <section id="home" class="hero container">
       <h1>Welcome to Durgay Publicity</h1>
       <p>Design. Print. Deliver.</p>
     </section>
 
-    <!-- PRINTING SERVICES -->
     <section id="printing" class="services-section container">
-        <h2>Printing Services</h2>
+      <h2>Printing Services</h2>
 
-        <div class="services-container">
-
-            <!-- Banner -->
-            <div class="service-card">
-                <img src="images/banner.jpg" alt="Banner Printing" class="service-icon">
-                <h3>Banner Printing</h3>
-                <p>Large, durable vinyl banners</p>
-            </div>
-
-            <!-- Flex -->
-            <div class="service-card">
-                <img src="images/flex.jpg" alt="Flex Printing" class="service-icon">
-                <h3>Flex Printing</h3>
-                <p>Outdoor flex printing</p>
-            </div>
-
-            <!-- Mug -->
-            <div class="service-card">
-                <img src="images/mug.jpg" alt="Mug Printing" class="service-icon">
-                <h3>Mug Printing</h3>
-                <p>Custom sublimation mugs</p>
-            </div>
-
-            <!-- Standee -->
-            <div class="service-card">
-                <img src="images/standee.jpg" alt="Standee Printing" class="service-icon">
-                <h3>Standee Printing</h3>
-                <p>Premium event standees</p>
-            </div>
-
-            <!-- T-Shirt -->
-            <div class="service-card">
-                <img src="images/tshirt.jpg" alt="T-shirt Printing" class="service-icon">
-                <h3>T-Shirt Printing</h3>
-                <p>High-quality custom tees</p>
-            </div>
-
+      <div class="services-container">
+        <div class="service-card">
+          <img src="images/banner.jpg" alt="Banner Printing" class="service-icon">
+          <h3>Banner Printing</h3>
+          <p>Large, durable vinyl banners</p>
         </div>
+
+        <div class="service-card">
+          <img src="images/flex.jpg" alt="Flex Printing" class="service-icon">
+          <h3>Flex Printing</h3>
+          <p>Outdoor flex printing</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/mug.jpg" alt="Mug Printing" class="service-icon">
+          <h3>Mug Printing</h3>
+          <p>Custom sublimation mugs</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/standee.jpg" alt="Standee Printing" class="service-icon">
+          <h3>Standee Printing</h3>
+          <p>Premium event standees</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/tshirt.jpg" alt="T-Shirt Printing" class="service-icon">
+          <h3>T-Shirt Printing</h3>
+          <p>High-quality custom tees</p>
+        </div>
+      </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="contact container">
       <h2>Contact Us</h2>
       <p><strong>Mobile:</strong> 7309512783</p>
@@ -87,23 +179,19 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <p>© 2025 Durgay Publicity • All Rights Reserved</p>
     </div>
   </footer>
 
-  <!-- IMAGE FALLBACK SCRIPT -->
+  <!-- JS: fallback for images that fail -->
   <script>
     document.addEventListener('DOMContentLoaded', function(){
       document.querySelectorAll('img').forEach(function(img){
-        img.onerror = function(){
-          this.src = 'images/placeholder.png';
-        };
+        img.onerror = function(){ this.src = 'images/placeholder.png'; };
       });
     });
   </script>
-
 </body>
 </html>
