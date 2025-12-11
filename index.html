@@ -5,115 +5,34 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Durgay Publicity - Print & Design</title>
 
-  <!-- Inline CSS (no external stylesheet needed) -->
+  <!-- INLINE CSS — paste this entire file as index.html to avoid missing stylesheet -->
   <style>
-  :root {
-    --accent: #d8383b;
-    --muted: #6b6b6b;
-    --card-bg: #fff;
-    --page-bg: #f5f5f5;
-    --container-width: 1100px;
-  }
-
+  :root { --accent:#d8383b; --muted:#6b6b6b; --card-bg:#fff; --page-bg:#f5f5f5; --cw:1100px; }
   *{box-sizing:border-box}
-  body{
-    font-family: Arial, Helvetica, sans-serif;
-    margin:0;
-    background:var(--page-bg);
-    color:#222;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-  }
-
-  .container{
-    max-width:var(--container-width);
-    margin:0 auto;
-    padding:20px;
-  }
-
-  /* HEADER */
-  .site-header{
-    background:#fff;
-    border-bottom:1px solid #eee;
-    position:sticky;
-    top:0;
-    z-index:50;
-  }
-  .header-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:12px 20px;
-  }
-  .logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-  }
-  .logo img{
-    width:58px;
-    height:58px;
-    border-radius:50%;
-    object-fit:cover;
-  }
+  body{font-family:Arial,Helvetica,sans-serif;margin:0;background:var(--page-bg);color:#222}
+  .container{max-width:var(--cw);margin:0 auto;padding:20px}
+  .site-header{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:50}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo img{width:58px;height:58px;border-radius:50%;object-fit:cover}
   .brand{font-size:20px;color:var(--accent);line-height:1}
   .brand span{display:block;font-size:12px;color:#111;margin-top:-2px;font-weight:700}
   .main-nav a{margin-left:18px;color:#333;text-decoration:none;font-weight:600}
-
-  /* HERO */
-  .hero{
-    padding:36px 0;
-    text-align:center;
-  }
-  .hero h1{margin:6px 0;font-size:28px}
-  .hero p{color:var(--muted);margin:0}
-
-  /* SERVICES */
-  .services-section{ text-align:center; padding:30px 0; }
-  .services-section h2{ font-size:28px; margin:6px 0 18px; color:#222 }
-  .services-container{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-    justify-content:center;
-    margin-top:8px;
-    padding:0 10px;
-  }
-  .service-card{
-    background:var(--card-bg);
-    width:240px;
-    padding:18px;
-    border-radius:12px;
-    box-shadow:0 6px 14px rgba(0,0,0,0.06);
-    transition:transform .18s ease, box-shadow .18s ease;
-    text-align:center;
-  }
-  .service-card:hover{ transform:translateY(-6px); box-shadow:0 12px 28px rgba(0,0,0,0.12); }
-  .service-icon{ width:64px; height:64px; object-fit:contain; display:block; margin:0 auto 12px; }
-  .service-card h3{ margin:6px 0; font-size:18px; color:#111 }
-  .service-card p{ color:var(--muted); margin:0; font-size:14px }
-
-  /* CONTACT */
-  .contact{ background:#fff; padding:28px; border-radius:10px; margin:30px 0; box-shadow:0 6px 14px rgba(0,0,0,0.04); text-align:center }
-
-  /* FOOTER */
-  .site-footer{ background:#222; color:#fff; padding:18px; text-align:center; margin-top:30px }
-
-  /* Responsive */
-  @media (max-width:880px){
-    .service-card{ width:46%; }
-  }
-  @media (max-width:640px){
-    .service-card{ width:100%; }
-    .main-nav{ display:none; }
-    .header-inner{ padding:10px; }
-  }
+  .hero{padding:36px 0;text-align:center}
+  .services-section{text-align:center;padding:30px 0}
+  .services-section h2{font-size:28px;margin:6px 0 18px;color:#222}
+  .services-container{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:8px;padding:0 10px}
+  .service-card{background:var(--card-bg);width:240px;padding:18px;border-radius:12px;box-shadow:0 6px 14px rgba(0,0,0,0.06);transition:transform .18s ease, box-shadow .18s ease;text-align:center}
+  .service-card:hover{transform:translateY(-6px);box-shadow:0 12px 28px rgba(0,0,0,0.12)}
+  .service-icon{width:64px;height:64px;object-fit:contain;display:block;margin:0 auto 12px}
+  .contact{background:#fff;padding:28px;border-radius:10px;margin:30px 0;box-shadow:0 6px 14px rgba(0,0,0,0.04);text-align:center}
+  .site-footer{background:#222;color:#fff;padding:18px;text-align:center;margin-top:30px}
+  @media (max-width:880px){ .service-card{width:46%} }
+  @media (max-width:640px){ .service-card{width:100%} .main-nav{display:none} .header-inner{padding:10px} }
   </style>
 
-  <!-- Favicon (optional) -->
   <link rel="icon" href="images/favicon.ico">
 </head>
-
 <body>
   <header class="site-header">
     <div class="container header-inner">
@@ -185,12 +104,9 @@
     </div>
   </footer>
 
-  <!-- JS: fallback for images that fail -->
   <script>
     document.addEventListener('DOMContentLoaded', function(){
-      document.querySelectorAll('img').forEach(function(img){
-        img.onerror = function(){ this.src = 'images/placeholder.png'; };
-      });
+      document.querySelectorAll('img').forEach(function(img){ img.onerror = function(){ this.src = 'images/placeholder.png'; }; });
     });
   </script>
 </body>
